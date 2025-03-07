@@ -1,6 +1,6 @@
 from datetime import datetime
-from models import Tide, TideType
-from tides_file_parser import TidesFileParser
+from main.models import Tide, TideType
+from main.tides_file_parser import TidesFileParser
 import unittest
 
 class TestTidesFileParser(unittest.TestCase):

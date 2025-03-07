@@ -34,11 +34,11 @@ class RccCalendar:
         for event in all_events[:5]:
             print(event)
 
-    def withTides(self, file_path):
+    def with_tides(self, file_path):
         self.tide_files.append(file_path)
         return self
 
-    def withEvents(self, file_path):
+    def with_events(self, file_path):
         self.event_files.append(file_path)
         return self
 
@@ -54,29 +54,29 @@ def read_file(file_path) -> List[str]:
 
 if __name__ == '__main__':
     calendar = RccCalendar() \
-        .withTides('./data/march_tides.csv') \
-        .withTides('./data/april_tides.csv') \
-        .withTides('./data/may_tides.csv') \
-        .withTides('./data/june_tides.csv') \
-        .withTides('./data/july_tides.csv') \
-        .withTides('./data/august_tides.csv') \
-        .withTides('./data/september_tides.csv') \
-        .withTides('./data/october_tides.csv') \
-        .withTides('./data/november_tides.csv') \
-        .withTides('./data/december_tides.csv') \
-        .withTides('./data/january_tides.csv') \
-        .withTides('./data/february_tides.csv') \
+        .with_tides('../data/march_tides.csv') \
+        .with_tides('./data/april_tides.csv') \
+        .with_tides('./data/may_tides.csv') \
+        .with_tides('./data/june_tides.csv') \
+        .with_tides('./data/july_tides.csv') \
+        .with_tides('./data/august_tides.csv') \
+        .with_tides('./data/september_tides.csv') \
+        .with_tides('./data/october_tides.csv') \
+        .with_tides('./data/november_tides.csv') \
+        .with_tides('./data/december_tides.csv') \
+        .with_tides('./data/january_tides.csv') \
+        .with_tides('./data/february_tides.csv') \
         \
-        .withEvents('./data/march_events.csv') \
-        .withEvents('./data/april_events.csv') \
-        .withEvents('./data/may_events.csv') \
-        .withEvents('./data/june_events.csv') \
-        .withEvents('./data/july_events.csv') \
-        .withEvents('./data/august_events.csv') \
-        .withEvents('./data/september_events.csv') \
-        .withEvents('./data/october_events.csv') \
-        .withEvents('./data/november_events.csv') \
-        .withEvents('./data/december_events.csv') \
-        .withEvents('./data/january_events.csv') \
-        .withEvents('./data/february_events.csv')
+        .with_events('./data/march_events.csv') \
+        .with_events('./data/april_events.csv') \
+        .with_events('./data/may_events.csv') \
+        .with_events('./data/june_events.csv') \
+        .with_events('./data/july_events.csv') \
+        .with_events('./data/august_events.csv') \
+        .with_events('./data/september_events.csv') \
+        .with_events('./data/october_events.csv') \
+        .with_events('./data/november_events.csv') \
+        .with_events('./data/december_events.csv') \
+        .with_events('./data/january_events.csv') \
+        .with_events('./data/february_events.csv')
     calendar.create()

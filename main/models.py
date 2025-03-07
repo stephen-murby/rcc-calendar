@@ -15,6 +15,12 @@ class EventType(Enum):
     CRUISING = "CRUISING"
     CLUB_ADMINISTRATION = "CLUB_ADMINISTRATION"
 
+    @classmethod
+    def of(cls, param):
+        # return the event type that matches the param by name
+        return cls[param]
+
+
 @dataclass
 class Tide:
     type: TideType

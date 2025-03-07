@@ -19,9 +19,9 @@ class TidesFileParser:
             if parts[1]:
                 time_str = parts[1]
                 datetime_str = f"{date_str} {time_str}"
-                time = datetime.strptime(datetime_str, "%d/%m/%Y %H:%M")
+                starting_at = datetime.strptime(datetime_str, "%d/%m/%Y %H:%M")
                 height = float(parts[2])
-                tide = Tide(TideType.HIGH, time, height)
+                tide = Tide(TideType.HIGH, starting_at, height)
                 tides.append(tide)
             # If the LW field is not empty, create a LOW tide object
             if parts[3]:
