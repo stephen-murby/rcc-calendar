@@ -1,4 +1,3 @@
-from main.rcc_calendar import RccCalendar
 from main.ribble_cruising_club_ical_calender import RibbleCruisingClubICalCalender
 
 
