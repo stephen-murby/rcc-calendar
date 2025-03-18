@@ -1,6 +1,9 @@
+import csv
 from typing import List
-from models import Tides, Tide, TideType
 from datetime import datetime
+
+from main.models import Tide, TideType
+
 
 class TidesFileParser:
     @staticmethod
@@ -13,13 +16,13 @@ class TidesFileParser:
         # Iterate over the lines
         for line in lines:
             # Split the line by the comma
-            parts = line.split(',')
+            parts = next(csv.reader([line]))
             date_str = parts[0]
             # If the HW field is not empty, create a HIGH tide object
             if parts[1]:
                 time_str = parts[1]
                 datetime_str = f"{date_str} {time_str}"
-                starting_at = datetime.strptime(datetime_str, "%d/%m/%Y %H:%M")
+                starting_at = datetime.strptime(datetime_str, "%d/%m/%Y %H%M")
                 height = float(parts[2])
                 tide = Tide(TideType.HIGH, starting_at, height)
                 tides.append(tide)
@@ -27,7 +30,7 @@ class TidesFileParser:
             if parts[3]:
                 time_str = parts[3]
                 datetime_str = f"{date_str} {time_str}"
-                time = datetime.strptime(datetime_str, "%d/%m/%Y %H:%M")
+                time = datetime.strptime(datetime_str, "%d/%m/%Y %H%M")
                 height = float(parts[4])
                 tide = Tide(TideType.LOW, time, height)
                 tides.append(tide)
